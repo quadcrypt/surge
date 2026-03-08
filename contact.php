@@ -30,14 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'surgedigitalhq@gmail.com';
-        $mail->Password   = 'zheycxxmbtqolgha'; // Gmail App Password
+        $mail->Username   = 'youremail';
+        $mail->Password   = 'yourgmailapppassword'; // Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        $mail->Port       = portno; //port number
 
         // SEND TO YOU
-        $mail->setFrom('surgedigitalhq@gmail.com', 'SURGE Website');
-        $mail->addAddress('surge.official.001@gmail.com', 'SURGE Team');
+        $mail->setFrom('youremail', 'SURGE Website');
+        $mail->addAddress('youremail', 'SURGE Team');
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
@@ -65,10 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $thankMail->isSMTP();
         $thankMail->Host = 'smtp.gmail.com';
         $thankMail->SMTPAuth = true;
-        $thankMail->Username = 'surgedigitalhq@gmail.com';
-        $thankMail->Password = 'zheycxxmbtqolgha';
+        $thankMail->Username = 'youremail.com';
+        $thankMail->Password = 'gmailapp-password';
         $thankMail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $thankMail->Port = 587;
+        $thankMail->Port = portno; //port number
 
         $thankMail->setFrom('surgedigitalhq@gmail.com', 'SURGE Team');
         $thankMail->addAddress($email, $name);
@@ -106,4 +106,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     header("Location: index.html");
     exit();
+
 }
